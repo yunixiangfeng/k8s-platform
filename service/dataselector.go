@@ -96,7 +96,7 @@ func (d *dataSelector) Paginate() *dataSelector {
 
 	// 处理最后一页，这时候就把endIndex由30改为25了
 	if len(d.GenericDataList) < endIndex {
-		endIndex = len(d.GenericDataList) - 1
+		endIndex = len(d.GenericDataList)
 	}
 	d.GenericDataList = d.GenericDataList[startIndex:endIndex]
 	return d
