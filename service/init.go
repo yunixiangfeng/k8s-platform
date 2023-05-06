@@ -12,7 +12,7 @@ import (
 var K8s k8s
 
 type k8s struct {
-	Clientset *kubernetes.Clientset
+	ClientSet *kubernetes.Clientset
 }
 
 // 初始化k8s
@@ -32,5 +32,5 @@ func (k *k8s) Init() {
 	} else {
 		logger.Info("创建K8s client 成功!")
 	}
-	k.Clientset = clientset
+	k.ClientSet = clientset
 }
