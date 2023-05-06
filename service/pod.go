@@ -74,7 +74,7 @@ func (p *pod) GetPodDetail(podName, namespace string) (pod *corev1.Pod, err erro
 }
 
 // 删除Pod
-func (p *pod) DeletePdo(podName, namespace string) (err error) {
+func (p *pod) DeletePod(podName, namespace string) (err error) {
 	err = K8s.ClientSet.CoreV1().Pods(namespace).Delete(context.TODO(), podName, metav1.DeleteOptions{})
 	if err != nil {
 		logger.Error("删除Pod详情失败，" + err.Error())
@@ -84,7 +84,8 @@ func (p *pod) DeletePdo(podName, namespace string) (err error) {
 }
 
 // 更新Pod
-func (p *pod) UpdatePod(podName string, namespace, content string) (err error) {
+// func (p *pod) UpdatePod(podName string, namespace, content string) (err error) {
+func (p *pod) UpdatePod(namespace, content string) (err error) {
 	var pod = &corev1.Pod{}
 	// 反序列化为Pod对象
 	err = json.Unmarshal([]byte(content), pod)
