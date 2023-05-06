@@ -16,7 +16,7 @@ type pod struct{}
 // 定义列表的返回内容，Items是pod元素列表，Total是元素数量
 type PodsResp struct {
 	Total int          `json:"total"`
-	Items []corev1.Pod `json:"items`
+	Items []corev1.Pod `json:"items"`
 }
 
 // 获取pod列表，支持过滤、排序、分页
