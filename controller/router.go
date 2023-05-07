@@ -97,6 +97,21 @@ func (r *router) InitApiRouter(router *gin.Engine) {
 		GET("/api/k8s/ingress/detail", Ingress.GetIngressDetail).
 		DELETE("/api/k8s/ingress/del", Ingress.DeleteIngress).
 		PUT("/api/k8s/ingress/update", Ingress.UpdateIngress).
-		POST("/api/k8s/ingress/create", Ingress.CreateIngress)
+		POST("/api/k8s/ingress/create", Ingress.CreateIngress).
+		// Configmaps
+		GET("/api/k8s/configmaps", ConfigMap.GetConfigMaps).
+		GET("/api/k8s/configmap/detail", ConfigMap.GetConfigMapDetail).
+		DELETE("/api/k8s/configmap/del", ConfigMap.DeleteConfigMap).
+		PUT("/api/k8s/configmap/update", ConfigMap.UpdateConfigMap).
+		// secret
+		GET("/api/k8s/secrets", Secret.GetSecrets).
+		GET("/api/k8s/secret/detail", Secret.GetSecretDetail).
+		DELETE("/api/k8s/secret/del", Secret.DeleteSecret).
+		PUT("/api/k8s/secret/update", Secret.UpdateSecret).
+		//pvc操作
+		GET("/api/k8s/pvcs", Pvc.GetPvcs).
+		GET("/api/k8s/pvc/detail", Pvc.GetPvcDetail).
+		DELETE("/api/k8s/pvc/del", Pvc.DeletePvc).
+		PUT("/api/k8s/pvc/update", Pvc.UpdatePvc)
 
 }

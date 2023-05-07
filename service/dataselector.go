@@ -201,3 +201,36 @@ func (n nodeCell) GetCreation() time.Time {
 func (n nodeCell) GetName() string {
 	return n.Name
 }
+
+// configmap
+type configMapCell corev1.ConfigMap
+
+func (c configMapCell) GetCreation() time.Time {
+	return c.CreationTimestamp.Time
+}
+
+func (c configMapCell) GetName() string {
+	return c.Name
+}
+
+// secret
+type secretCell corev1.Secret
+
+func (s secretCell) GetCreation() time.Time {
+	return s.CreationTimestamp.Time
+}
+
+func (s secretCell) GetName() string {
+	return s.Name
+}
+
+// pvc
+type pvcCell corev1.PersistentVolumeClaim
+
+func (p pvcCell) GetCreation() time.Time {
+	return p.CreationTimestamp.Time
+}
+
+func (p pvcCell) GetName() string {
+	return p.Name
+}
