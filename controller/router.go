@@ -60,6 +60,11 @@ func (r *router) InitApiRouter(router *gin.Engine) {
 		PUT("/api/k8s/deployment/restart", Deployment.RestartDeployment).
 		PUT("/api/k8s/deployment/update", Deployment.UpdateDeployment).
 		GET("/api/k8s/deployment/numnp", Deployment.GetDeployNumPerNp).
-		POST("/api/k8s/deployment/create", Deployment.CreateDeployment)
+		POST("/api/k8s/deployment/create", Deployment.CreateDeployment).
+		// workflows
+		GET("/api/k8s/workflows", Workflow.GetList).
+		GET("/api/k8s/workflow/detail", Workflow.GetById).
+		POST("/api/k8s/workflow/create", Workflow.Create).
+		DELETE("/api/k8s/workflow/del", Workflow.DelById)
 
 }
