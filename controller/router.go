@@ -61,10 +61,42 @@ func (r *router) InitApiRouter(router *gin.Engine) {
 		PUT("/api/k8s/deployment/update", Deployment.UpdateDeployment).
 		GET("/api/k8s/deployment/numnp", Deployment.GetDeployNumPerNp).
 		POST("/api/k8s/deployment/create", Deployment.CreateDeployment).
+		//daemonset操作
+		GET("/api/k8s/daemonsets", DaemonSet.GetDaemonSets).
+		GET("/api/k8s/daemonset/detail", DaemonSet.GetDaemonSetDetail).
+		DELETE("/api/k8s/daemonset/del", DaemonSet.DeleteDaemonSet).
+		PUT("/api/k8s/daemonset/update", DaemonSet.UpdateDaemonSet).
 		// workflows
 		GET("/api/k8s/workflows", Workflow.GetList).
 		GET("/api/k8s/workflow/detail", Workflow.GetById).
 		POST("/api/k8s/workflow/create", Workflow.Create).
-		DELETE("/api/k8s/workflow/del", Workflow.DelById)
+		DELETE("/api/k8s/workflow/del", Workflow.DelById).
+		//statefulset操作
+		GET("/api/k8s/statefulsets", StatefulSet.GetStatefulSets).
+		GET("/api/k8s/statefulset/detail", StatefulSet.GetStatefulSetDetail).
+		DELETE("/api/k8s/statefulset/del", StatefulSet.DeleteStatefulSet).
+		PUT("/api/k8s/statefulset/update", StatefulSet.UpdateStatefulSet).
+		//node操作
+		GET("/api/k8s/nodes", Node.GetNodes).
+		GET("/api/k8s/node/detail", Node.GetNodeDetail).
+		//namespace操作
+		GET("/api/k8s/namespaces", Namespace.GetNamespaces).
+		GET("/api/k8s/namespace/detail", Namespace.GetNamespaceDetail).
+		DELETE("/api/k8s/namespace/del", Namespace.DeleteNamespace).
+		//pv操作
+		GET("/api/k8s/pvs", Pv.GetPvs).
+		GET("/api/k8s/pv/detail", Pv.GetPvDetail).
+		//service操作
+		GET("/api/k8s/services", Servicev1.GetServices).
+		GET("/api/k8s/service/detail", Servicev1.GetServiceDetail).
+		DELETE("/api/k8s/service/del", Servicev1.DeleteService).
+		PUT("/api/k8s/service/update", Servicev1.UpdateService).
+		POST("/api/k8s/service/create", Servicev1.CreateService).
+		//ingress操作
+		GET("/api/k8s/ingresses", Ingress.GetIngresses).
+		GET("/api/k8s/ingress/detail", Ingress.GetIngressDetail).
+		DELETE("/api/k8s/ingress/del", Ingress.DeleteIngress).
+		PUT("/api/k8s/ingress/update", Ingress.UpdateIngress).
+		POST("/api/k8s/ingress/create", Ingress.CreateIngress)
 
 }

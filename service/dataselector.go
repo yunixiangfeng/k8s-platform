@@ -7,6 +7,7 @@ import (
 
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
+	nwv1 "k8s.io/api/networking/v1"
 )
 
 // dataselector用于排序，过滤，分页的数据类型
@@ -125,4 +126,78 @@ func (d deploymentCell) GetCreation() time.Time {
 
 func (d deploymentCell) GetName() string {
 	return d.Name
+}
+
+// daemonCell
+type daemonSetCell appsv1.DaemonSet
+
+func (d daemonSetCell) GetCreation() time.Time {
+	return d.CreationTimestamp.Time
+}
+
+func (d daemonSetCell) GetName() string {
+	return d.Name
+}
+
+// statefulSetCell
+type statefulSetCell appsv1.StatefulSet
+
+func (s statefulSetCell) GetCreation() time.Time {
+	return s.CreationTimestamp.Time
+}
+
+func (s statefulSetCell) GetName() string {
+	return s.Name
+}
+
+type namespaceCell corev1.Namespace
+
+func (n namespaceCell) GetCreation() time.Time {
+	return n.CreationTimestamp.Time
+}
+
+func (n namespaceCell) GetName() string {
+	return n.Name
+}
+
+type pvCell corev1.PersistentVolume
+
+func (p pvCell) GetCreation() time.Time {
+	return p.CreationTimestamp.Time
+}
+
+func (p pvCell) GetName() string {
+	return p.Name
+}
+
+// service
+type serviceCell corev1.Service
+
+func (s serviceCell) GetCreation() time.Time {
+	return s.CreationTimestamp.Time
+}
+
+func (s serviceCell) GetName() string {
+	return s.Name
+}
+
+// Ingress
+type ingressCell nwv1.Ingress
+
+func (i ingressCell) GetCreation() time.Time {
+	return i.CreationTimestamp.Time
+}
+
+func (i ingressCell) GetName() string {
+	return i.Name
+}
+
+type nodeCell corev1.Node
+
+func (n nodeCell) GetCreation() time.Time {
+	return n.CreationTimestamp.Time
+}
+
+func (n nodeCell) GetName() string {
+	return n.Name
 }
