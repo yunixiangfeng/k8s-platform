@@ -20,7 +20,7 @@ func main() {
 	// 初始化gin对象/路由配置
 	r := gin.Default()
 	// 加载jwt中间件
-	r.Use(middle.JWTAuth())
+	//r.Use(middle.JWTAuth())
 	// 加载跨域中间件
 	r.Use(middle.Cors())
 	// 初始化路由规则

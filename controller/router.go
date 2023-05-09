@@ -44,6 +44,8 @@ type router struct{}
 // 		POST("/api/k8s/pods", Pod.DeletePod).
 func (r *router) InitApiRouter(router *gin.Engine) {
 	router.
+		// login
+		// POST("/api/login", ).
 		// Pods
 		GET("/api/k8s/pods", Pod.GetPods).
 		GET("/api/k8s/pod/detail", Pod.GetPodDetail).

@@ -8,6 +8,9 @@ const (
 	// tail的日志行数
 	// tail -n 2000
 	PodLogTailLine = 2000
+	//登录账号密码
+	AdminUser = "admin"
+	AdminPwd  = "123456"
 
 	// DB Config
 	DbType = "mysql"
